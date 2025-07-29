@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 import { cartContext } from '../Context/CartContext'
-import CartItem from '../Compenent/CartItem'
-import CheckOut from '../Compenent/CheckOut'
+import CartItem from '../Component/CartItem'
+import CheckOut from '../Component/CheckOut'
 
 export default function Cart() {
   let {cart, getLoggedUserCart, loading, clearItem ,disabled}= useContext(cartContext)

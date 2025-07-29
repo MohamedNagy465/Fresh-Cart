@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { wishListContext } from '../Context/WishListContext';
-import Loading from '../Compenent/Loading';
-import WishItem from '../Compenent/WishItem';
+import Loading from '../Component/Loading';
+import WishItem from '../Component/WishItem';
 import { Heart } from 'lucide-react';
 
 export default function WishList() {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Card from '../Compenent/Card';
+import Card from '../Component/Card';
 import axios from 'axios';
-import Loading from '../Compenent/Loading';
+import Loading from '../Component/Loading';
 import { useQuery } from '@tanstack/react-query';
 
 export default function Product() {

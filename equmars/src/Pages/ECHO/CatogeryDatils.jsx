@@ -2,8 +2,8 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
-import Loading from '../../Compenent/Loading';
-import Card from '../../Compenent/Card';
+import Loading from '../../Component/Loading';
+import Card from '../../Component/Card';
 
 export default function CatogeryDatils() {
   const { id } = useParams();

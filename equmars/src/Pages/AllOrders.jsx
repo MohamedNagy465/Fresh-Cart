@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import Loading from './../Compenent/Loading';
+import Loading from '../Component/Loading';
 import { useQuery } from '@tanstack/react-query';
 
 export default function AllOrders() {
@@ -48,14 +48,14 @@ export default function AllOrders() {
 
   if (orders.length === 0) {
     return (
-      <p className="text-center text-gray-700 text-xl font-medium mt-20">
+      <p className="text-center text-gray-700 text-xl font-medium my-50">
         لا توجد طلبات حتى الآن.
       </p>
     );
   }
 
   return (
-    <div className="container mx-auto px-4 pt-28 pb-6 min-h-screen">
+    <div className="container  px-4 pt-28 pb-6 min-h-screen">
       {orders.map((item) => (
         <div
           key={item.id}
@@ -147,3 +147,4 @@ export default function AllOrders() {
     </div>
   );
 }
+

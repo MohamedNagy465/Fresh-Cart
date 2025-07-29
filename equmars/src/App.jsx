@@ -1,6 +1,6 @@
 import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Layout from './Compenent/layout';
+import Layout from './Component/Layout';
 import Home from './Pages/Home';
 import Product from './Pages/Product';
 import Categories from './Pages/Categories';
@@ -21,16 +21,16 @@ import ResetPassword from './Pages/ECHO/ResetPassword';
 import BrandDetail from './Pages/BrandDetail';
 import WishList from './Pages/WishList';
 import WishListContextProvider from './Context/WishListContext';
-import WishItem from './Compenent/WishItem';
+import WishItem from './Component/WishItem';
 import AllOrders from './Pages/AllOrders';
-import CatogerySlider from './Compenent/CatogerySlider';
-import MainSlider from './Compenent/MainSlider';
+import CatogerySlider from './Component/CatogerySlider';
+import MainSlider from './Component/MainSlider';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import CatogeryDatils from './Pages/ECHO/CatogeryDatils';
-import Card from './Compenent/Card';
+import Card from './Component/Card';
 import {  QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 function App() {

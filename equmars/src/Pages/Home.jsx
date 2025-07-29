@@ -1,8 +1,8 @@
-import Card from '../Compenent/Card'
+import Card from '../Component/Card'
 import axios from 'axios'
-import Loading from '../Compenent/Loading'
-import CatogerySlider from '../Compenent/CatogerySlider'
-import MainSlider from '../Compenent/MainSlider'
+import Loading from '../Component/Loading'
+import CatogerySlider from '../Component/CatogerySlider'
+import MainSlider from '../Component/MainSlider'
 import { useQuery } from '@tanstack/react-query'
 
 export default function Home() {

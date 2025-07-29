@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
-import Card from '../Compenent/Card';
-import Loading from '../Compenent/Loading';
+import Card from '../Component/Card';
+import Loading from '../Component/Loading';
 import { useQuery } from '@tanstack/react-query';
 
 export default function Categories() {

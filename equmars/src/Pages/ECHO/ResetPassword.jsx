@@ -40,7 +40,7 @@ export default function ResetPassword() {
       localStorage.setItem("token", data.token)
       toast.success("Password Change Success")
       setTimeout(() => {
-        navigate("/Login")
+        navigate("/Home")
       }, 2000)
     } catch (error) {
       setError(error.response?.data?.message || "حدث خطأ أثناء تسجيل الدخول")

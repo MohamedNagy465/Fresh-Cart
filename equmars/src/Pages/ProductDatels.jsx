@@ -6,10 +6,10 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
-import { ShoppingCart } from 'lucide-react';
+import { ShoppingCart } from 'lucide-react';a
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import Card from '../Compenent/Card';
+import Card from '../Component/Card';
 import { cartContext } from './../Context/CartContext';
 
 
@@ -86,7 +86,6 @@ export default function ProductDatels() {
       <div className="bg-white shadow-xl rounded-2xl grid grid-cols-1 md:grid-cols-2 gap-10 p-6 relative text-2xl my-5 font-bold after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-1 after:bg-green-500 rounded-md">
         <div className="w-full max-w-xs mx-auto p-4 bg-white rounded-xl shadow-lg">
           <div className="w-full h-48 rounded-md overflow-hidden mb-4 flex items-center justify-center bg-gray-100 cursor-pointer">
-            {/* الصورة الكبيرة الآن تعرض الصورة في mainImage */}
             <img
               src={mainImage}
               alt={product?.title}
@@ -98,7 +97,7 @@ export default function ProductDatels() {
               <SwiperSlide key={idx}>
                 <div
                   className="h-20 rounded-md border overflow-hidden cursor-pointer hover:border-green-500 transition"
-                  onClick={() => setMainImage(img)} // عند الضغط على الصورة المصغرة حدث mainImage
+                  onClick={() => setMainImage(img)} 
                 >
                   <img src={img} alt={`Thumbnail ${idx + 1}`} className="object-cover w-full h-full" />
                 </div>

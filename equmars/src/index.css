@@ -11,13 +11,13 @@
         @apply hover:text-green-600
     }
 }
-@utility container{
-   margin-left: auto;
-    margin-right: auto;
-    max-width: 1024px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
+    @utility container{
+    margin-left: auto;
+        margin-right: auto;
+        max-width: 1024px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 @theme{
   --color-mainColor: #0aad0a;
 

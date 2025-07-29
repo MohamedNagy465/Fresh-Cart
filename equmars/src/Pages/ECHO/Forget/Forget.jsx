@@ -50,16 +50,16 @@ export default function Forget() {
 
   return (
     <div className=' py-30'>
-      <h1 className='text-2xl font-bold'>نسيت كلمة المرور</h1>
+      <h1 className='text-2xl font-bold'>Forget Password</h1>
 
       {error && <h3 className='text-red-500'>{error}</h3>}
 
       <form className='space-y-2 mt-5' onSubmit={formik.handleSubmit}>
         <div className="flex flex-col space-y-2">
-          <label htmlFor="email">البريد الإلكتروني</label>
+          <label htmlFor="email"> Email</label>
           <input
             type="text"
-            placeholder='البريد الإلكتروني'
+            placeholder='Write Email'
             className='input'
             name='email'
             value={formik.values.email}
@@ -72,7 +72,7 @@ export default function Forget() {
         </div>
 
         <button className='btn flex justify-center items-center gap-2' type='submit' disabled={loading}>
-          {loading ? <><Loader2 className="animate-spin w-5 h-5" /> جاري الإرسال...</> : "إرسال"}
+          {loading ? <><Loader2 className="animate-spin w-5 h-5" /> </> : "Submit"}
         </button>
       </form>
     </div>
