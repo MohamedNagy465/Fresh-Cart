@@ -47,8 +47,8 @@ export default function Login() {
         navigate("/Home")
       }, 2000)
     } catch (error) {
-      setError(error.response?.data?.message || "حدث خطأ أثناء تسجيل الدخول")
-      toast.error(error.response?.data?.message || "حدث خطأ")
+      setError("fail email or password")
+      toast.error(error.response?.data?.message)
     } finally {
       toast.dismiss(toastId)
       setLoading(false)

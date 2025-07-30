@@ -6,15 +6,15 @@ import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, Loader2 } from 'lucide-react';
 
+
 export default function Register() {
   const regexPassword = /^[A-Z][a-z0-9]{5,}$/
   const regexPhone = /^01[0125][0-9]{8}$/
   const [show, setShow] = useState("password")
   const [showConfirmPass, setShowConfirmPass] = useState("password");
   const [error, setError] = useState()
-  const [loading, setLoading] = useState(false)  // حالة التحميل
+  const [loading, setLoading] = useState(false)   
   const navigate = useNavigate()
-
   function showPassword() {
     setShow(show === "password" ? "text" : "password")
   }
@@ -39,32 +39,35 @@ export default function Register() {
         navigate("/login")
       }, 2000);
     } catch (error) {
-      setError(error.response?.data?.message || "حدث خطأ أثناء التسجيل")
-      toast.error(error.response?.data?.message || "حدث خطأ")
+      setError("Please fill in all required fields correctly.");
+      toast.error(error.response?.data?.message)
     } finally {
       toast.dismiss(toastId)
       setLoading(false)
     }
   }
+const validationSchema = object({
+  name: string()
+    .required("Name is required")
+    .min(3, "Name must be at least 3 characters")
+    .max(20, "Name must not exceed 20 characters"),
 
-  const validationSchema = object({
-    name: string("name must be string")
-      .required("الاسم مطلوب")
-      .min(3, "يجب أن يكون الاسم على الأقل 3 حروف")
-      .max(20, "يجب أن لا يزيد الاسم عن 20 حرف"),
-    email: string("email must be string")
-      .required("البريد الإلكتروني مطلوب")
-      .email("يرجى إدخال بريد إلكتروني صالح"),
-    password: string("")
-      .required("كلمة المرور مطلوبة")
-      .matches(regexPassword, "يجب أن تبدأ بحرف كبير ثم 5 أحرف أو أرقام"),
-    rePassword: string("matches password")
-      .required("تأكيد كلمة المرور مطلوب")
-      .oneOf([ref("password")], "كلمة المرور غير متطابقة"),
-    phone: string("")
-      .required("رقم الهاتف مطلوب")
-      .matches(regexPhone, "رقم الهاتف يجب أن يكون رقمًا مصريًا صالحًا")
-  })
+  email: string()
+    .required("Email is required")
+    .email("Please enter a valid email address"),
+
+  password: string()
+    .required("Password is required")
+    .matches(regexPassword, "Password must start with a capital letter followed by 5 letters or numbers"),
+
+  rePassword: string()
+    .required("Password confirmation is required")
+    .oneOf([ref("password")], "Passwords do not match"),
+
+  phone: string()
+    .required("Phone number is required")
+    .matches(regexPhone, "Phone number must be a valid Egyptian number")
+});
 
   const formik = useFormik({
     initialValues: {
@@ -79,7 +82,7 @@ export default function Register() {
   })
 
   return (
-    <div className='py-10'>
+    <div className='py-30'>
       <h1 className='text-2xl font-bold'>Register Form</h1>
       {error && <h3 className='text-red-500'>{error}</h3>}
       <form className='space-y-2' onSubmit={formik.handleSubmit}>

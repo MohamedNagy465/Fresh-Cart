@@ -26,7 +26,7 @@ export default function ProductDatels() {
     setLoding(true);
     let { data } = await axios.get(`https://ecommerce.routemisr.com/api/v1/products/${id}`);
     setProduct(data.data);
-    setMainImage(data.data.imageCover || data.data.images[0]); // <-- هنا تعيين الصورة الافتراضية
+    setMainImage(data.data.imageCover || data.data.images[0]); 
     getRelatedProduct(data.data.category._id);
   } catch (error) {
     console.log(error);
