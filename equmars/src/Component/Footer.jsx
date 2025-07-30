@@ -32,10 +32,10 @@ export default function Footer() {
       <div className="flex flex-col sm:flex-row sm:items-center gap-4 flex-wrap">
         <h3 className="text-slate-700 font-medium min-w-[150px]">Payment Partners:</h3>
         <div className="flex gap-4 flex-wrap items-center">
-          <img className="w-20 h-auto" src="../../public/amazon-pay.png" alt="Amazon Pay" />
-          <img className="w-20 h-auto" src="../../public/paypal.png" alt="PayPal" />
-          <img className="w-20 h-auto" src="../../public/mastercard.webp" alt="MasterCard" />
-          <img className="w-20 h-auto" src="../../public/American-Express-Color.png" alt="American Express" />
+          <img className="w-20 h-auto" src="/amazon-pay.png" alt="Amazon Pay" />
+          <img className="w-20 h-auto" src="/paypal.png" alt="PayPal" />
+          <img className="w-20 h-auto" src="/mastercard.webp" alt="MasterCard" />
+          <img className="w-20 h-auto" src="/American-Express-Color.png" alt="American Express" />
         </div>
       </div>
 
@@ -43,8 +43,8 @@ export default function Footer() {
       <div className="flex flex-col sm:flex-row sm:items-center gap-4 flex-wrap">
         <h3 className="text-slate-700 font-medium min-w-[150px]">Get Deliveries with FreshCart:</h3>
         <div className="flex gap-4 flex-wrap items-center">
-          <img className="w-32 h-auto" src="../../public/get-apple-store.png" alt="Download on Apple Store" />
-          <img className="w-32 h-auto" src="../../public/get-google-play.png" alt="Get it on Google Play" />
+          <img className="w-32 h-auto" src="/get-apple-store.png" alt="Download on Apple Store" />
+          <img className="w-32 h-auto" src="/get-google-play.png" alt="Get it on Google Play" />
         </div>
       </div>
     </div>
