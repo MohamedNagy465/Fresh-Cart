@@ -39,7 +39,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* روابط تحميل التطبيق */}
+      {/* روابط تحميل التطبيق */}ِِ
       <div className="flex flex-col sm:flex-row sm:items-center gap-4 flex-wrap">
         <h3 className="text-slate-700 font-medium min-w-[150px]">Get Deliveries with FreshCart:</h3>
         <div className="flex gap-4 flex-wrap items-center">

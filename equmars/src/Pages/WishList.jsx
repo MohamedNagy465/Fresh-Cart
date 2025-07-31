@@ -13,8 +13,8 @@ export default function WishList() {
     async function fetchWish() {
       setIsFetching(true);
       try {
-        const response = await getLoggedUserWish(); // نفترض إن الدالة بترجع القايمة
-        setWishData(response); // احفظ الداتا داخليًا
+        const response = await getLoggedUserWish();  
+        setWishData(response); 
       } catch (err) {
         console.error("فشل في تحميل المفضلة", err);
       } finally {
@@ -37,13 +37,17 @@ export default function WishList() {
     );
   }
 
-  if (!wishData.length) {
-    return (
-      <div className="text-center text-gray-600 my-40 flex items-center justify-center gap-1">
-        <Heart /> لا توجد عناصر في المفضلة حاليًا.
+ if (!wishData.length) {
+  return (
+    <div className="flex flex-col items-center justify-center text-center py-32 text-gray-500">
+      <div className="flex items-center justify-center w-20 h-20 rounded-full bg-red-100 mb-4">
+        <Heart className="w-10 h-10 text-red-500 animate-pulse" />
       </div>
-    );
-  }
+      <h2 className="text-2xl font-semibold mb-2">المفضلة فارغة</h2>
+      <p className="text-sm text-gray-400">لم تقم بإضافة أي منتجات حتى الآن.</p>
+    </div>
+  );
+}
 
   return (
     <div className="container bg-gray-100 my-30 p-5">
