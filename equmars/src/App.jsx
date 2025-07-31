@@ -25,13 +25,12 @@ import WishItem from './Component/WishItem';
 import AllOrders from './Pages/AllOrders';
 import CatogerySlider from './Component/CatogerySlider';
 import MainSlider from './Component/MainSlider';
-
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-import CatogeryDatils from './Pages/ECHO/CatogeryDatils';
 import Card from './Component/Card';
 import {  QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import CategoryDetails from './Component/CatogoryDetails';
 
 function App() {
 
@@ -57,7 +56,7 @@ function App() {
         { path: "CatogerySlider", element: <ProtectedRouters><CatogerySlider /></ProtectedRouters> },
         { path: "MainSlider", element: <ProtectedRouters><MainSlider /></ProtectedRouters> },
         { path: "Categories", element: <ProtectedRouters><Categories /></ProtectedRouters> },
-        { path: "CatogeryDatels/:id", element: <ProtectedRouters><CatogeryDatils /></ProtectedRouters> },
+        { path: "CategoryDetails/:id", element: <ProtectedRouters><CategoryDetails /></ProtectedRouters> },
         { path: "Brands", element: <ProtectedRouters><Brands /></ProtectedRouters> },
         { path: "BrandDetails/:id", element: <ProtectedRouters><BrandDetail /></ProtectedRouters> },
         { path: "login", element: <LoginProtected><Login /></LoginProtected> },
