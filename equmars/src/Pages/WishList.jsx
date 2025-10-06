@@ -3,12 +3,10 @@ import { wishListContext } from '../Context/WishListContext';
 import Loading from '../Component/Loading';
 import WishItem from '../Component/WishItem';
 import { Heart } from 'lucide-react';
-
 export default function WishList() {
   const { getLoggedUserWish, loading } = useContext(wishListContext);
   const [wishData, setWishData] = useState([]);
   const [isFetching, setIsFetching] = useState(true);
-
   useEffect(() => {
     async function fetchWish() {
       setIsFetching(true);
@@ -21,14 +19,11 @@ export default function WishList() {
         setIsFetching(false);
       }
     }
-
     fetchWish();
   }, []);
-
   function handleRemoveItem(id) {
     setWishData((prev) => prev.filter((item) => item._id !== id));
   }
-
   if (loading || isFetching) {
     return (
       <div className="text-center text-green-500 text-lg font-medium py-20">
@@ -58,6 +53,6 @@ export default function WishList() {
           <WishItem key={item._id} item={item} onRemove={handleRemoveItem} />
         ))}
       </div>
-    </div>
-  );
+</div>
+);
 }

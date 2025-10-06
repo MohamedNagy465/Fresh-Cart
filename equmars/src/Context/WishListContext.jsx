@@ -71,5 +71,5 @@ export default function WishListContextProvider({children}) {
       }}>
       {children}
     </wishListContext.Provider>
-  )
+)
 }

@@ -84,6 +84,6 @@ export default function WishItem({ item, onRemove }) {
           </button>
         </div>
       </div>
-    </div>
-  );
+ </div>
+);
 }
