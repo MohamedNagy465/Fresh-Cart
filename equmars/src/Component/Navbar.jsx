@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { authContext } from '../Context/AuthContext';
 import { cartContext } from '../Context/CartContext';
 import { wishListContext } from '../Context/WishListContext';
-
 export default function Navbar() {
   const { token, setToken } = useContext(authContext);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -23,9 +22,7 @@ export default function Navbar() {
   }, [wish]);
 
   const hasWishItems = wish && wish.length > 0;
-
   const toggleMobile = () => setIsMobileOpen(!isMobileOpen);
-
   const logout = () => {
     localStorage.removeItem('token');
     setToken(null);
@@ -81,30 +78,42 @@ export default function Navbar() {
           </ul>
         )}
 
-        {/* Mobile Icons + Menu */}
-        <div className="flex items-center gap-4 md:hidden">
-          {/* WishList */}
-          <Link to="/wishlist" className="hoverLink">
-            <div className={`rounded-full p-1 transition-colors duration-300 ${hasWishItems ? 'bg-green-500' : 'bg-transparent'} ${isShaking ? 'shake' : ''}`}>
-              <Heart className={`w-6 h-6 ${hasWishItems ? 'text-white' : 'text-gray-700'}`} />
-            </div>
-          </Link>
-
-          {/* Cart */}
-          <div className="relative">
-            <Link to="/cart" className="hoverLink text-gray-700">
-              <ShoppingCart className="w-6 h-6" />
-              {cart?.numOfCartItems > 0 && (
-                <div className="bg-green-500 w-5 h-5 text-white text-xs font-bold flex items-center justify-center rounded-full absolute -top-2 -left-2">
-                  {cart.numOfCartItems}
-                </div>
-              )}
-            </Link>
-          </div>
-
-          {/* Menu Toggle */}
-          <Menu className="cursor-pointer" onClick={toggleMobile} />
+     {/* Mobile Icons + Menu */}
+<div className="flex items-center gap-4 md:hidden">
+  {token && (
+    <>
+      {/* WishList */}
+      <Link to="/wishlist" className="hoverLink">
+        <div
+          className={`rounded-full p-1 transition-colors duration-300 ${
+            hasWishItems ? "bg-green-500" : "bg-transparent"
+          } ${isShaking ? "shake" : ""}`}
+        >
+          <Heart
+            className={`w-6 h-6 ${
+              hasWishItems ? "text-white" : "text-gray-700"
+            }`}
+          />
         </div>
+      </Link>
+
+      {/* Cart */}
+      <div className="relative">
+        <Link to="/cart" className="hoverLink text-gray-700">
+          <ShoppingCart className="w-6 h-6" />
+          {cart?.numOfCartItems > 0 && (
+            <div className="bg-green-500 w-5 h-5 text-white text-xs font-bold flex items-center justify-center rounded-full absolute -top-2 -left-2">
+              {cart.numOfCartItems}
+            </div>
+          )}
+        </Link>
+      </div>
+    </>
+  )}
+  {/* Menu Toggle */}
+  <Menu className="cursor-pointer" onClick={toggleMobile} />
+</div>
+
       </div>
 
       {/* Mobile Navigation Menu */}
@@ -116,7 +125,7 @@ export default function Navbar() {
               <li><Link to="/Product" className="hoverLink" onClick={() => setIsMobileOpen(false)}>Product</Link></li>
               <li><Link to="/Categories" className="hoverLink" onClick={() => setIsMobileOpen(false)}>Categories</Link></li>
               <li><Link to="/Brands" className="hoverLink" onClick={() => setIsMobileOpen(false)}>Brands</Link></li>
-              <li><Link to="/AllOrders" className="hoverLink" onClick={() => setIsMobileOpen(false)}>WishList</Link></li>
+              <li><Link to="/AllOrders" className="hoverLink" onClick={() => setIsMobileOpen(false)}>AllOrders</Link></li>
               <li><button onClick={logout} className="text-red-600 hover:text-red-800">Logout</button></li>
             </>
           ) : (
