@@ -38,21 +38,21 @@ export default function WishListContextProvider({children}) {
       setWish(data.data)
       toast.success("add to wishList");
      } catch (error) {
-      toast.error(error?.response?.data?.message)
+      toast.error(error?.response?.data?.message|| "add to wishList")
      }
     }
     async function removeItem(idItem) {
       try {
-        let {data} = await axios.delete(`https:ecommerce.routemisr.com/api/v1/wishlist/${idItem}`,{
+        let {data} = await axios.delete(`https://ecommerce.routemisr.com/api/v1/wishlist/${idItem}`,{
           headers: {
           token : localStorage.getItem("token")
         }
         })
         setWish(data.data)
 
-        toast.success("تم الحذف")
+        toast.success("Item removed successfully!")
       } catch (error) {
-         toast.error(error?.response?.data?.message)
+         toast.error(error?.response?.data?.message || "Item removed successfully!")
       }
     }
     useEffect(()=>{
