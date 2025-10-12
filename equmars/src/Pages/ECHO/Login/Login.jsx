@@ -21,7 +21,7 @@
 
     const validationSchema = object({
       email: string("email must be string")
-        .required("emil is required")
+        .required("email is required")
         .email("email must be vaild"),
       password: string("")
         .required("password is required")
@@ -84,7 +84,7 @@
               onBlur={formik.handleBlur}
             />
             {formik.errors.email && formik.touched.email && (
-              <p className='text-red-500 font-semibold my-4'>{formik.errors.email}</p>
+              <p className='text-red-500 font-semibold'>{formik.errors.email}</p>
             )}
           </div>
           <div className="flex flex-col space-y-2">
