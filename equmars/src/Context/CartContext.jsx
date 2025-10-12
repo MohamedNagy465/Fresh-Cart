@@ -43,7 +43,7 @@
           }
         );
         setCart(data);
-        toast.success("تمت الإضافة إلى السلة");
+        toast.success("add to cart");
       } catch (error) {
         toast.error(error?.response?.data?.message || "فشل في الإضافة");
         console.log(error);
